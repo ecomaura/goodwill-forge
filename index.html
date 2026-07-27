@@ -97,6 +97,7 @@
         /* Layout */
         .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
         .section { padding: 5rem 0; }
+        .bg-surface { background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         .grid { display: grid; gap: 2rem; }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
@@ -109,10 +110,12 @@
             cursor: pointer; transition: var(--transition); border: 2px solid transparent;
             font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;
         }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { background: #ea580c; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+        .btn-primary:hover { background: #ea580c; transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #ea580c; }
         .btn-outline { border-color: var(--accent); color: var(--accent); background: transparent; }
         .btn-outline:hover { background: var(--accent); color: white; transform: translateY(-2px); }
+        .btn-white { background: white; color: var(--primary); }
+        .btn-white:hover { background: #f1f5f9; transform: translateY(-2px); }
         
         /* Preloader */
         #preloader {
@@ -158,7 +161,7 @@
         .view.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Hero Section (Home) */
+        /* Hero Section */
         .hero {
             height: 100vh; display: flex; align-items: center; position: relative;
             background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.8)),
@@ -181,13 +184,25 @@
         .card {
             background: var(--surface); border-radius: var(--border-radius);
             border: 1px solid var(--border); overflow: hidden; transition: var(--transition);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm); height: 100%; display: flex; flex-direction: column;
         }
         .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
         .card-img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 1.5rem; }
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .card-title { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary); }
-        .card-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .card-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; flex-grow: 1; }
+
+        /* Home Page Previews */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white; padding: 4rem 2rem; border-radius: var(--border-radius);
+            text-align: center; margin: 4rem 0; box-shadow: var(--shadow-lg);
+        }
+        .cta-banner h2 { color: white; margin-bottom: 1rem; }
+        
+        .quality-check-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; text-align: left; }
+        .quality-check-list li { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; color: var(--text-main); }
+        .quality-check-list i { color: var(--accent); font-size: 1.2rem; }
 
         /* Products View Specifics */
         .filter-group { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
@@ -219,16 +234,7 @@
         .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
         .timeline-content { padding: 1.5rem; background: var(--surface); border-radius: var(--border-radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
 
-        /* Gallery */
-        .masonry { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); grid-auto-rows: 200px; gap: 1rem; }
-        .masonry-item { border-radius: var(--border-radius); overflow: hidden; cursor: pointer; position: relative; }
-        .masonry-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .masonry-item:hover img { transform: scale(1.1); }
-        .masonry-item.large { grid-row: span 2; grid-column: span 2; }
-        .gallery-overlay { position: absolute; inset: 0; background: rgba(11,31,58,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); color: white; font-weight: 600; font-size: 1.2rem; }
-        .masonry-item:hover .gallery-overlay { opacity: 1; }
-
-        /* Lightbox */
+        /* Gallery / Lightbox */
         #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 10000; display: none; align-items: center; justify-content: center; }
         #lightbox.active { display: flex; }
         #lightbox img { max-width: 90%; max-height: 90vh; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
@@ -294,7 +300,6 @@
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
             .timeline-item:nth-child(even), .timeline-item:nth-child(odd) { left: 0; }
             .timeline-dot { left: 21px !important; right: auto !important; }
-            .masonry-item.large { grid-row: span 1; grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr; }
             .nav-actions { margin-right: 1rem; }
         }
@@ -342,6 +347,7 @@
         
         <!-- ================= HOME VIEW ================= -->
         <section id="view-home" class="view active">
+            <!-- Hero -->
             <div class="hero">
                 <div class="container">
                     <div class="hero-content reveal">
@@ -349,12 +355,13 @@
                         <p class="hero-subtitle">Premium Manufacturer and Stockiest of Carbon, Stainless, and Alloy Steel industrial components for critical applications worldwide.</p>
                         <div class="hero-buttons">
                             <button class="btn btn-primary" onclick="openQuoteModal()">Request Quote</button>
-                            <a href="#products" class="btn btn-outline">Explore Products</a>
+                            <a href="#products" class="btn btn-outline" style="color:white; border-color:white;">Explore Products</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Stats -->
             <div class="stats-wrapper">
                 <div class="container grid grid-4">
                     <div class="stat-item reveal">
@@ -376,28 +383,130 @@
                 </div>
             </div>
 
+            <!-- Home: About Us Preview -->
+            <div class="section container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div class="reveal">
+                        <h2 class="section-title">A Legacy of Forging Excellence</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">For over 25 years, GOODWILL FORGE has been the trusted partner for mission-critical piping solutions. We blend advanced CNC machining with rigorous testing to deliver components that power the world's most demanding industries.</p>
+                        <ul style="list-style: none; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> Global Export Capabilities</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> Massive Stock Inventory</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> Custom Forging Solutions</li>
+                        </ul>
+                        <a href="#about" class="btn btn-outline">Discover Our Story</a>
+                    </div>
+                    <div class="reveal">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Factory" style="border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home: Core Products Preview -->
+            <div class="section bg-surface">
+                <div class="container">
+                    <div class="text-center reveal">
+                        <h2 class="section-title">Our Core Products</h2>
+                        <p class="section-subtitle">Precision engineered piping components designed to meet international standards including ASME, DIN, and EN.</p>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card reveal">
+                            <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="Pipe Fittings" class="card-img">
+                            <div class="card-body">
+                                <h3 class="card-title">Pipe Fittings</h3>
+                                <p class="card-text">High-performance Buttweld & Forged Fittings (Elbows, Tees, Reducers) available in seamless and welded forms for high-pressure systems.</p>
+                                <div><a href="#products" class="btn btn-outline">View Fittings</a></div>
+                            </div>
+                        </div>
+                        <div class="card reveal">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Industrial Flanges" class="card-img">
+                            <div class="card-body">
+                                <h3 class="card-title">Industrial Flanges</h3>
+                                <p class="card-text">Weld Neck, Slip-On, Blind, and RTJ Flanges manufactured with strict dimensional accuracy and robust material strength.</p>
+                                <div><a href="#products" class="btn btn-outline">View Flanges</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home: Materials Preview -->
             <div class="section container">
                 <div class="text-center reveal">
-                    <h2 class="section-title">Our Core Products</h2>
-                    <p class="section-subtitle">Precision engineered piping components designed to meet international standards including ASME, DIN, and EN.</p>
+                    <h2 class="section-title">Engineered for Extremes</h2>
+                    <p class="section-subtitle">We stock and manufacture using premium grades sourced from globally approved mills.</p>
                 </div>
-                <div class="grid grid-2">
-                    <div class="card reveal">
-                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="Pipe Fittings" class="card-img">
+                <div class="grid grid-3">
+                    <div class="card material-card reveal">
                         <div class="card-body">
-                            <h3 class="card-title">Pipe Fittings</h3>
-                            <p class="card-text">High-performance Elbows, Tees, Reducers, and Caps available in seamless and welded forms for high-pressure systems.</p>
-                            <a href="#products" class="btn btn-outline">View Fittings</a>
+                            <h3 class="card-title">Carbon Steel</h3>
+                            <p class="card-text">Exceptional strength and durability for standard industrial piping. (ASTM A234 WPB, A105)</p>
                         </div>
                     </div>
-                    <div class="card reveal">
-                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Industrial Flanges" class="card-img">
+                    <div class="card material-card reveal">
                         <div class="card-body">
-                            <h3 class="card-title">Industrial Flanges</h3>
-                            <p class="card-text">Weld Neck, Slip-On, Blind, and RTJ Flanges manufactured with strict dimensional accuracy and robust material strength.</p>
-                            <a href="#products" class="btn btn-outline">View Flanges</a>
+                            <h3 class="card-title">Stainless Steel</h3>
+                            <p class="card-text">Superior corrosion resistance for chemical and food processing. (SS304/L, SS316/L)</p>
                         </div>
                     </div>
+                    <div class="card material-card reveal">
+                        <div class="card-body">
+                            <h3 class="card-title">Alloy Steel</h3>
+                            <p class="card-text">High-temperature and high-pressure stability for power generation. (WP5, WP9, WP11)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center reveal" style="margin-top: 2rem;">
+                    <a href="#materials" class="btn btn-primary">See All Material Specs</a>
+                </div>
+            </div>
+
+            <!-- Home: Quality & Industries Preview -->
+            <div class="section bg-surface">
+                <div class="container grid grid-2" style="align-items: center;">
+                    <div class="reveal">
+                        <h2 class="section-title">Uncompromising Quality</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Zero defect tolerance. Every component undergoes rigorous inspection to ensure absolute reliability in the field.</p>
+                        <ul class="quality-check-list">
+                            <li><i class="ph-fill ph-shield-check"></i> ISO 9001:2015 Certified</li>
+                            <li><i class="ph-fill ph-magnifying-glass"></i> 100% PMI Testing</li>
+                            <li><i class="ph-fill ph-file-text"></i> EN10204 3.1 Certification</li>
+                            <li><i class="ph-fill ph-activity"></i> Full NDT Capabilities</li>
+                        </ul>
+                        <a href="#quality" class="btn btn-outline">Explore QA Process</a>
+                    </div>
+                    <div class="reveal">
+                        <div class="grid grid-2">
+                            <div class="card industry-card" style="padding: 1.5rem;">
+                                <i class="ph ph-gas-pump industry-icon" style="font-size: 2rem;"></i>
+                                <h4>Oil & Gas</h4>
+                            </div>
+                            <div class="card industry-card" style="padding: 1.5rem;">
+                                <i class="ph ph-factory industry-icon" style="font-size: 2rem;"></i>
+                                <h4>Petrochemical</h4>
+                            </div>
+                            <div class="card industry-card" style="padding: 1.5rem;">
+                                <i class="ph ph-lightning industry-icon" style="font-size: 2rem;"></i>
+                                <h4>Power Plants</h4>
+                            </div>
+                            <div class="card industry-card" style="padding: 1.5rem;">
+                                <i class="ph ph-boat industry-icon" style="font-size: 2rem;"></i>
+                                <h4>Marine</h4>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top: 1rem;">
+                            <a href="#industries" style="color: var(--accent); font-weight: 600;">View All Industries &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home: Contact CTA Banner -->
+            <div class="container">
+                <div class="cta-banner reveal">
+                    <h2>Ready to Source Premium Piping Components?</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Contact our engineering sales team for rapid quotes, technical support, and global shipping options.</p>
+                    <a href="#contact" class="btn btn-white">Contact Us Today</a>
                 </div>
             </div>
         </section>
@@ -444,7 +553,6 @@
                 </div>
 
                 <div class="grid grid-3" id="product-grid">
-                    <!-- Dynamic Product Cards via HTML -->
                     <div class="card reveal product-item" data-category="fittings">
                         <div class="card-body">
                             <h3 class="card-title">45° & 90° Elbows</h3>
@@ -454,7 +562,7 @@
                                 <span class="meta-tag">ASME B16.9</span>
                             </div>
                             <p class="card-text">Used to change the direction of flow. Available in Long Radius (LR) and Short Radius (SR).</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('45/90 Elbows')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('45/90 Elbows')">Quote</button></div>
                         </div>
                     </div>
                     <div class="card reveal product-item" data-category="fittings">
@@ -465,7 +573,7 @@
                                 <span class="meta-tag">Stainless Steel</span>
                             </div>
                             <p class="card-text">Distribute or combine fluid flow. Precision machined ends for perfect weldability.</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('Tees')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('Tees')">Quote</button></div>
                         </div>
                     </div>
                     <div class="card reveal product-item" data-category="fittings">
@@ -476,7 +584,7 @@
                                 <span class="meta-tag">Custom Sizes</span>
                             </div>
                             <p class="card-text">Connect pipes of different diameters. Eccentric used to maintain bottom of pipe elevation.</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('Reducers')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('Reducers')">Quote</button></div>
                         </div>
                     </div>
                     <div class="card reveal product-item" data-category="flanges">
@@ -487,7 +595,7 @@
                                 <span class="meta-tag">150# to 2500#</span>
                             </div>
                             <p class="card-text">Ideal for high-pressure and extreme temperature applications. Provides excellent stress distribution.</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('Weld Neck Flange')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('Weld Neck Flange')">Quote</button></div>
                         </div>
                     </div>
                     <div class="card reveal product-item" data-category="flanges">
@@ -498,7 +606,7 @@
                                 <span class="meta-tag">ASTM A105</span>
                             </div>
                             <p class="card-text">Slips over the pipe and welded inside and out. Cost-effective and easy to align.</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('Slip-On Flange')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('Slip-On Flange')">Quote</button></div>
                         </div>
                     </div>
                     <div class="card reveal product-item" data-category="flanges">
@@ -509,7 +617,7 @@
                                 <span class="meta-tag">RTJ Available</span>
                             </div>
                             <p class="card-text">Used to seal the end of a piping system or pressure vessel opening. Handles high stress.</p>
-                            <button class="btn btn-outline" onclick="openQuoteModal('Blind Flange')">Quote</button>
+                            <div><button class="btn btn-outline" onclick="openQuoteModal('Blind Flange')">Quote</button></div>
                         </div>
                     </div>
                 </div>
@@ -882,7 +990,7 @@
             window.scrollTo(0, 0);
             
             // Re-trigger animations
-            triggerReveals();
+            setTimeout(triggerReveals, 100);
         }
 
         window.addEventListener('hashchange', route);
@@ -1013,7 +1121,7 @@
 
                 productItems.forEach(item => {
                     if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
+                        item.style.display = 'flex'; // maintain flex for card layout
                         setTimeout(() => item.classList.add('active'), 50); // Re-trigger fade
                     } else {
                         item.style.display = 'none';
