@@ -251,6 +251,20 @@
         .form-control:focus { outline: none; border-color: var(--accent); }
         textarea.form-control { resize: vertical; min-height: 120px; }
         .map-container { height: 300px; width: 100%; border-radius: var(--border-radius); overflow: hidden; margin-top: 2rem; background: #e5e5e5; display: flex; align-items: center; justify-content: center; }
+        
+        /* Social Icons */
+        .social-icons-wrapper { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+        .social-icon { 
+            display: inline-flex; align-items: center; justify-content: center; 
+            width: 40px; height: 40px; border-radius: 50%; font-size: 1.25rem;
+            transition: var(--transition);
+        }
+        /* Footer Socials */
+        .footer-socials .social-icon { background: rgba(255, 255, 255, 0.1); color: white; }
+        .footer-socials .social-icon:hover { background: var(--accent); transform: translateY(-3px); }
+        /* Contact Page Socials */
+        .contact-socials .social-icon { background: var(--surface); color: var(--primary); border: 1px solid var(--border); }
+        .contact-socials .social-icon:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-3px); }
 
         /* Modal */
         .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
@@ -822,6 +836,20 @@
                             </div>
                         </div>
                         
+                        <!-- Contact Social Media Links -->
+                        <div class="info-item">
+                            <i class="ph ph-share-network info-icon"></i>
+                            <div class="info-content">
+                                <h4>Connect With Us</h4>
+                                <div class="social-icons-wrapper contact-socials">
+                                    <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+                                    <a href="#" class="social-icon" aria-label="Twitter/X" target="_blank"><i class="ph ph-twitter-logo"></i></a>
+                                    <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="ph ph-facebook-logo"></i></a>
+                                    <a href="#" class="social-icon" aria-label="YouTube" target="_blank"><i class="ph ph-youtube-logo"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="map-container">
                             <!-- Placeholder for Google Maps iframe -->
                             <div style="text-align:center; color: #888;">
@@ -878,6 +906,14 @@
                         <i class="ph ph-nut"></i> GOODWILL FORGE
                     </div>
                     <p style="margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">Leading manufacturer and global stockiest of premium Carbon Steel, Stainless Steel, and Alloy Steel Pipe Fittings and Flanges.</p>
+                    
+                    <!-- Footer Social Media Links -->
+                    <div class="social-icons-wrapper footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter/X" target="_blank"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                    </div>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
@@ -1165,3 +1201,4 @@
     </script>
 </body>
 </html>
+```eof
