@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOODWILL FORGE | Premium Pipe Fittings & Flanges</title>
+    <meta name="description" content="GOODWILL FORGE - Global Manufacturer & Stockiest of Carbon Steel, Stainless Steel, and Alloy Steel Pipe Fittings and Flanges.">
+    <meta name="keywords" content="Pipe Fittings, Flanges, Carbon Steel, Stainless Steel, Alloy Steel, GOODWILL FORGE, Manufacturer, Engineering">
+    <meta property="og:title" content="GOODWILL FORGE | Engineering Excellence">
+    <meta property="og:description" content="Premium manufacturer and stockiest of industrial pipe fittings and flanges.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (Lightweight SVG icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GOODWILL FORGE",
+      "url": "https://www.goodwillforge.com",
+      "logo": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&q=80",
+      "description": "Manufacturer & Stockiest of Carbon, Stainless, and Alloy Steel Pipe Fittings and Flanges.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Industrial Estate, Phase 1",
+        "addressLocality": "Global City",
+        "addressRegion": "Metropolis",
+        "postalCode": "100010",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+
+    <style>
+        /* CSS Variables & Theming */
+        :root {
+            --primary: #0B1F3A;
+            --secondary: #5B6770;
+            --accent: #F97316;
+            --bg-color: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #0B1F3A;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+        }
+
+        [data-theme="dark"] {
+            --primary: #60A5FA;
+            --secondary: #94A3B8;
+            --accent: #F97316;
+            --bg-color: #0F172A;
+            --surface: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #CBD5E1;
+            --border: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.95);
+            --footer-bg: #020617;
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Typography Utilities */
+        .text-center { text-align: center; }
+        .text-accent { color: var(--accent); }
+        .text-primary { color: var(--primary); }
+        .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .section-subtitle { font-size: 1.125rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem; }
+        
+        /* Layout */
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 5rem 0; }
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 4px;
+            cursor: pointer; transition: var(--transition); border: 2px solid transparent;
+            font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0.05em;
+        }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #ea580c; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline { border-color: var(--accent); color: var(--accent); background: transparent; }
+        .btn-outline:hover { background: var(--accent); color: white; transform: translateY(-2px); }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-color); z-index: 9999;
+            display: flex; justify-content: center; align-items: center; transition: opacity 0.5s;
+        }
+        .loader {
+            width: 50px; height: 50px; border: 4px solid var(--border);
+            border-top-color: var(--accent); border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Scroll Progress */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 4px; background: var(--accent);
+            z-index: 10000; width: 0%; transition: width 0.1s;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; background: var(--nav-bg);
+            backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0;
+            border-bottom: 1px solid var(--border); transition: var(--transition);
+        }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
+        .logo i { color: var(--accent); font-size: 1.8rem; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-main); position: relative; }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0;
+            height: 2px; background: var(--accent); transition: var(--transition);
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-actions { display: flex; gap: 1rem; align-items: center; }
+        .theme-toggle { background: none; border: none; cursor: pointer; color: var(--text-main); font-size: 1.2rem; }
+        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
+
+        /* SPA Views */
+        .view { display: none; animation: fadeIn 0.5s ease-in-out; min-height: calc(100vh - 300px); padding-top: 80px; }
+        .view.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Hero Section (Home) */
+        .hero {
+            height: 100vh; display: flex; align-items: center; position: relative;
+            background: linear-gradient(rgba(11, 31, 58, 0.8), rgba(11, 31, 58, 0.8)),
+                        url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white; margin-top: -80px; padding-top: 80px;
+        }
+        .hero-content { max-width: 800px; z-index: 2; }
+        .hero-title { font-size: 4rem; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .hero-title span { color: var(--accent); }
+        .hero-subtitle { font-size: 1.25rem; margin-bottom: 2.5rem; font-weight: 300; opacity: 0.9; }
+        .hero-buttons { display: flex; gap: 1rem; }
+
+        /* Stats Section */
+        .stats-wrapper { background: var(--surface); border-bottom: 1px solid var(--border); padding: 3rem 0; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--primary); font-family: 'Montserrat'; }
+        .stat-label { font-size: 1rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Cards General */
+        .card {
+            background: var(--surface); border-radius: var(--border-radius);
+            border: 1px solid var(--border); overflow: hidden; transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 1.5rem; }
+        .card-title { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .card-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        /* Products View Specifics */
+        .filter-group { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--surface); border: 1px solid var(--border); padding: 0.5rem 1.5rem;
+            border-radius: 20px; cursor: pointer; color: var(--text-main); font-weight: 500; transition: var(--transition);
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .product-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .meta-tag { background: var(--bg-color); color: var(--secondary); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600; }
+
+        /* Materials Section */
+        .material-card { border-left: 4px solid var(--accent); }
+        .material-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.85rem; }
+        .material-table th, .material-table td { padding: 0.5rem; border-bottom: 1px solid var(--border); text-align: left; }
+        .material-table th { color: var(--primary); font-weight: 600; }
+
+        /* Industries Section */
+        .industry-card { text-align: center; padding: 2rem; }
+        .industry-icon { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+
+        /* Quality Timeline */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 2px; background: var(--border); top: 0; bottom: 0; left: 50%; margin-left: -1px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; }
+        .timeline-dot { position: absolute; width: 20px; height: 20px; right: -10px; background: var(--accent); border: 4px solid var(--bg-color); border-radius: 50%; top: 15px; z-index: 1; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+        .timeline-content { padding: 1.5rem; background: var(--surface); border-radius: var(--border-radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+
+        /* Gallery */
+        .masonry { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); grid-auto-rows: 200px; gap: 1rem; }
+        .masonry-item { border-radius: var(--border-radius); overflow: hidden; cursor: pointer; position: relative; }
+        .masonry-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .masonry-item:hover img { transform: scale(1.1); }
+        .masonry-item.large { grid-row: span 2; grid-column: span 2; }
+        .gallery-overlay { position: absolute; inset: 0; background: rgba(11,31,58,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); color: white; font-weight: 600; font-size: 1.2rem; }
+        .masonry-item:hover .gallery-overlay { opacity: 1; }
+
+        /* Lightbox */
+        #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 10000; display: none; align-items: center; justify-content: center; }
+        #lightbox.active { display: flex; }
+        #lightbox img { max-width: 90%; max-height: 90vh; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 2rem; cursor: pointer; }
+
+        /* Contact Section */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+        .info-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .info-icon { font-size: 2rem; color: var(--accent); }
+        .info-content h4 { color: var(--primary); margin-bottom: 0.25rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--text-main); font-family: inherit; transition: border-color 0.3s; }
+        .form-control:focus { outline: none; border-color: var(--accent); }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+        .map-container { height: 300px; width: 100%; border-radius: var(--border-radius); overflow: hidden; margin-top: 2rem; background: #e5e5e5; display: flex; align-items: center; justify-content: center; }
+
+        /* Modal */
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal.active { display: flex; }
+        .modal-content { background: var(--surface); width: 100%; max-width: 600px; border-radius: var(--border-radius); padding: 2rem; position: relative; animation: slideUp 0.3s ease-out; }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Footer */
+        .footer { background: var(--footer-bg); color: #CBD5E1; padding: 5rem 0 2rem; margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-logo { color: white; font-size: 1.5rem; font-family: 'Montserrat'; font-weight: 800; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .footer-logo i { color: var(--accent); }
+        .footer h4 { color: white; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; }
+
+        /* Floating Buttons */
+        .fab { position: fixed; bottom: 2rem; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); transition: var(--transition); z-index: 1000; text-decoration: none; }
+        .fab-whatsapp { right: 2rem; background: #25D366; }
+        .fab-whatsapp:hover { background: #128C7E; transform: scale(1.1); }
+        .fab-top { right: 2rem; bottom: 6rem; background: var(--secondary); opacity: 0; pointer-events: none; }
+        .fab-top.visible { opacity: 1; pointer-events: auto; }
+        .fab-top:hover { background: var(--primary); transform: scale(1.1); }
+
+        /* Utilities for Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+                background: var(--nav-bg); flex-direction: column; align-items: center; justify-content: center;
+                transition: var(--transition); gap: 2rem; font-size: 1.25rem;
+            }
+            .nav-links.active { left: 0; }
+            .hamburger { display: block; }
+            .hero-title { font-size: 2.5rem; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+            .timeline-item:nth-child(even), .timeline-item:nth-child(odd) { left: 0; }
+            .timeline-dot { left: 21px !important; right: auto !important; }
+            .masonry-item.large { grid-row: span 1; grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-actions { margin-right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <i class="ph ph-nut"></i> GOODWILL FORGE
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About Us</a></li>
+                <li><a href="#products" class="nav-item">Products</a></li>
+                <li><a href="#materials" class="nav-item">Materials</a></li>
+                <li><a href="#industries" class="nav-item">Industries</a></li>
+                <li><a href="#quality" class="nav-item">Quality</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="btn btn-primary" onclick="openQuoteModal()" style="display: none;">Quote</button>
+                <button class="hamburger" id="hamburger">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA (SPA Router Target) -->
+    <main id="app-root">
+        
+        <!-- ================= HOME VIEW ================= -->
+        <section id="view-home" class="view active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content reveal">
+                        <h1 class="hero-title">Engineering Excellence in <span>Forged Fittings & Flanges</span></h1>
+                        <p class="hero-subtitle">Premium Manufacturer and Stockiest of Carbon, Stainless, and Alloy Steel industrial components for critical applications worldwide.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="openQuoteModal()">Request Quote</button>
+                            <a href="#products" class="btn btn-outline">Explore Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-wrapper">
+                <div class="container grid grid-4">
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="500">0</div><span style="font-size:3rem;font-weight:800;color:var(--primary)">+</span>
+                        <div class="stat-label">Products Manufactured</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="35">0</div><span style="font-size:3rem;font-weight:800;color:var(--primary)">+</span>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="1000">0</div><span style="font-size:3rem;font-weight:800;color:var(--primary)">+</span>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h2 class="section-title">Our Core Products</h2>
+                    <p class="section-subtitle">Precision engineered piping components designed to meet international standards including ASME, DIN, and EN.</p>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card reveal">
+                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="Pipe Fittings" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">Pipe Fittings</h3>
+                            <p class="card-text">High-performance Elbows, Tees, Reducers, and Caps available in seamless and welded forms for high-pressure systems.</p>
+                            <a href="#products" class="btn btn-outline">View Fittings</a>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Industrial Flanges" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">Industrial Flanges</h3>
+                            <p class="card-text">Weld Neck, Slip-On, Blind, and RTJ Flanges manufactured with strict dimensional accuracy and robust material strength.</p>
+                            <a href="#products" class="btn btn-outline">View Flanges</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT VIEW ================= -->
+        <section id="view-about" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">About GOODWILL FORGE</h1>
+                    <p class="section-subtitle">Forging the future of industrial infrastructure with uncompromising quality and global reach.</p>
+                </div>
+                <div class="grid grid-2" style="align-items: center;">
+                    <div class="reveal">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Factory interior" style="border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    </div>
+                    <div class="reveal">
+                        <h3>Our Legacy</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-muted)">Founded over two decades ago, GOODWILL FORGE has established itself as a premier manufacturer and stockiest of carbon steel, stainless steel, and alloy steel piping components. Our state-of-the-art facility integrates advanced CNC machining, forging presses, and rigorous testing labs.</p>
+                        <h3>Mission</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-muted)">To deliver mission-critical piping solutions that ensure the safety, efficiency, and longevity of global industrial operations in Oil & Gas, Petrochemical, and Power sectors.</p>
+                        <ul style="list-style: none; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> ISO 9001:2015 Certified Manufacturing</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> 100% Material Traceability</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> In-house Destructive & NDT Testing</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Contact Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PRODUCTS VIEW ================= -->
+        <section id="view-products" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">Product Catalog</h1>
+                    <p class="section-subtitle">Comprehensive range of fittings and flanges conforming to ASME B16.9, B16.11, and B16.5.</p>
+                </div>
+                
+                <div class="filter-group reveal">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="fittings">Pipe Fittings</button>
+                    <button class="filter-btn" data-filter="flanges">Flanges</button>
+                </div>
+
+                <div class="grid grid-3" id="product-grid">
+                    <!-- Dynamic Product Cards via HTML -->
+                    <div class="card reveal product-item" data-category="fittings">
+                        <div class="card-body">
+                            <h3 class="card-title">45° & 90° Elbows</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Seamless</span>
+                                <span class="meta-tag">Welded</span>
+                                <span class="meta-tag">ASME B16.9</span>
+                            </div>
+                            <p class="card-text">Used to change the direction of flow. Available in Long Radius (LR) and Short Radius (SR).</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('45/90 Elbows')">Quote</button>
+                        </div>
+                    </div>
+                    <div class="card reveal product-item" data-category="fittings">
+                        <div class="card-body">
+                            <h3 class="card-title">Equal & Reducing Tees</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Carbon Steel</span>
+                                <span class="meta-tag">Stainless Steel</span>
+                            </div>
+                            <p class="card-text">Distribute or combine fluid flow. Precision machined ends for perfect weldability.</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('Tees')">Quote</button>
+                        </div>
+                    </div>
+                    <div class="card reveal product-item" data-category="fittings">
+                        <div class="card-body">
+                            <h3 class="card-title">Concentric & Eccentric Reducers</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Alloy Steel</span>
+                                <span class="meta-tag">Custom Sizes</span>
+                            </div>
+                            <p class="card-text">Connect pipes of different diameters. Eccentric used to maintain bottom of pipe elevation.</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('Reducers')">Quote</button>
+                        </div>
+                    </div>
+                    <div class="card reveal product-item" data-category="flanges">
+                        <div class="card-body">
+                            <h3 class="card-title">Weld Neck Flanges</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">ASME B16.5</span>
+                                <span class="meta-tag">150# to 2500#</span>
+                            </div>
+                            <p class="card-text">Ideal for high-pressure and extreme temperature applications. Provides excellent stress distribution.</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('Weld Neck Flange')">Quote</button>
+                        </div>
+                    </div>
+                    <div class="card reveal product-item" data-category="flanges">
+                        <div class="card-body">
+                            <h3 class="card-title">Slip-On Flanges</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">RF / FF</span>
+                                <span class="meta-tag">ASTM A105</span>
+                            </div>
+                            <p class="card-text">Slips over the pipe and welded inside and out. Cost-effective and easy to align.</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('Slip-On Flange')">Quote</button>
+                        </div>
+                    </div>
+                    <div class="card reveal product-item" data-category="flanges">
+                        <div class="card-body">
+                            <h3 class="card-title">Blind Flanges</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">High Pressure</span>
+                                <span class="meta-tag">RTJ Available</span>
+                            </div>
+                            <p class="card-text">Used to seal the end of a piping system or pressure vessel opening. Handles high stress.</p>
+                            <button class="btn btn-outline" onclick="openQuoteModal('Blind Flange')">Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MATERIALS VIEW ================= -->
+        <section id="view-materials" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">Material Specifications</h1>
+                    <p class="section-subtitle">We stock and manufacture using premium grades sourced from globally approved mills.</p>
+                </div>
+                
+                <div class="grid grid-3">
+                    <div class="card material-card reveal">
+                        <div class="card-body">
+                            <h3 class="card-title">Carbon Steel</h3>
+                            <p class="card-text">Exceptional strength and durability for standard industrial piping.</p>
+                            <table class="material-table">
+                                <tr><th>Grade</th><td>ASTM A234 WPB</td></tr>
+                                <tr><th>Low Temp</th><td>ASTM A420 WPL6</td></tr>
+                                <tr><th>Flanges</th><td>ASTM A105 / A350 LF2</td></tr>
+                                <tr><th>Applications</th><td>Oil, Gas, Water transmission</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card material-card reveal">
+                        <div class="card-body">
+                            <h3 class="card-title">Stainless Steel</h3>
+                            <p class="card-text">Superior corrosion resistance for chemical and food processing.</p>
+                            <table class="material-table">
+                                <tr><th>Austenitic</th><td>304/304L, 316/316L, 321</td></tr>
+                                <tr><th>High Temp</th><td>SS 310, 310S</td></tr>
+                                <tr><th>Super</th><td>SS 904L</td></tr>
+                                <tr><th>Applications</th><td>Chemical, Pharma, Marine</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card material-card reveal">
+                        <div class="card-body">
+                            <h3 class="card-title">Alloy Steel</h3>
+                            <p class="card-text">High-temperature and high-pressure stability for power plants.</p>
+                            <table class="material-table">
+                                <tr><th>Grades</th><td>WP5, WP9, WP11, WP22</td></tr>
+                                <tr><th>Advanced</th><td>WP91</td></tr>
+                                <tr><th>Properties</th><td>Creep resistance, hardness</td></tr>
+                                <tr><th>Applications</th><td>Power generation, Refineries</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INDUSTRIES VIEW ================= -->
+        <section id="view-industries" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">Industries We Serve</h1>
+                    <p class="section-subtitle">Our products form the backbone of critical infrastructure across diverse global sectors.</p>
+                </div>
+                <div class="grid grid-4">
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-gas-pump industry-icon"></i>
+                        <h4 class="card-title">Oil & Gas</h4>
+                        <p class="card-text">Upstream and downstream piping solutions.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-factory industry-icon"></i>
+                        <h4 class="card-title">Petrochemical</h4>
+                        <p class="card-text">Corrosion-resistant components for harsh chemicals.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-lightning industry-icon"></i>
+                        <h4 class="card-title">Power Plants</h4>
+                        <p class="card-text">Alloy steel fittings for high-pressure steam.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-boat industry-icon"></i>
+                        <h4 class="card-title">Marine</h4>
+                        <p class="card-text">Saltwater resistant stainless steel grades.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-drop industry-icon"></i>
+                        <h4 class="card-title">Water Treatment</h4>
+                        <p class="card-text">Large diameter flanges and carbon steel fittings.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-flask industry-icon"></i>
+                        <h4 class="card-title">Pharmaceutical</h4>
+                        <p class="card-text">Sanitary grade fittings for ultra-pure systems.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-crane industry-icon"></i>
+                        <h4 class="card-title">EPC Contractors</h4>
+                        <p class="card-text">Bulk supply and project management support.</p>
+                    </div>
+                    <div class="card industry-card reveal">
+                        <i class="ph ph-fork-knife industry-icon"></i>
+                        <h4 class="card-title">Food Processing</h4>
+                        <p class="card-text">Hygienic standard stainless connections.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= QUALITY VIEW ================= -->
+        <section id="view-quality" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">Quality Assurance & Testing</h1>
+                    <p class="section-subtitle">Zero defect tolerance. Every component undergoes rigorous inspection to ensure absolute reliability.</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Raw Material Inspection</h4>
+                            <p class="card-text">PMI (Positive Material Identification) and chemical analysis of incoming billets and plates.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>In-Process Checks</h4>
+                            <p class="card-text">Dimensional inspection during forging and CNC machining stages to guarantee precise tolerances.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Non-Destructive Testing (NDT)</h4>
+                            <p class="card-text">Ultrasonic Testing (UT), Magnetic Particle Inspection (MPI), and Radiography to detect internal flaws.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Destructive Testing</h4>
+                            <p class="card-text">Tensile strength, impact testing, and hardness testing on sample batches.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Final Certification</h4>
+                            <p class="card-text">Issue of EN10204 3.1 Mill Test Certificates and marking for 100% material traceability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center reveal" style="margin-top: 5rem;">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="grid grid-4" style="margin-top: 2rem;">
+                        <div class="card"><div class="card-body text-center"><h3 class="text-primary">ISO 9001:2015</h3></div></div>
+                        <div class="card"><div class="card-body text-center"><h3 class="text-primary">PED 2014/68/EU</h3></div></div>
+                        <div class="card"><div class="card-body text-center"><h3 class="text-primary">IBR Approved</h3></div></div>
+                        <div class="card"><div class="card-body text-center"><h3 class="text-primary">NACE MR0175</h3></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT VIEW ================= -->
+        <section id="view-contact" class="view">
+            <div class="section container">
+                <div class="text-center reveal">
+                    <h1 class="section-title">Contact Us</h1>
+                    <p class="section-subtitle">Get in touch for quotes, technical support, or worldwide export inquiries.</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <div class="info-item">
+                            <i class="ph ph-map-pin info-icon"></i>
+                            <div class="info-content">
+                                <h4>Headquarters & Manufacturing</h4>
+                                <p class="card-text">Plot No. 45, Industrial Estate, Phase 1<br>Global Manufacturing Hub, 100010</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ph ph-phone info-icon"></i>
+                            <div class="info-content">
+                                <h4>Phone Support</h4>
+                                <p class="card-text">Sales: +1 (555) 123-4567<br>Export: +1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ph ph-envelope info-icon"></i>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p class="card-text">sales@goodwillforge.com<br>exports@goodwillforge.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="ph ph-clock info-icon"></i>
+                            <div class="info-content">
+                                <h4>Business Hours</h4>
+                                <p class="card-text">Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <!-- Placeholder for Google Maps iframe -->
+                            <div style="text-align:center; color: #888;">
+                                <i class="ph ph-map-trifold" style="font-size: 3rem; margin-bottom: 0.5rem;"></i>
+                                <p>Interactive Google Map Placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container card reveal">
+                        <div class="card-body">
+                            <h3 class="card-title" style="margin-bottom: 1.5rem;">Send an Inquiry</h3>
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Company Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Contact Person" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Phone Number">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" required>
+                                        <option value="">Select Requirement...</option>
+                                        <option value="fittings">Pipe Fittings</option>
+                                        <option value="flanges">Flanges</option>
+                                        <option value="custom">Custom Manufacturing</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Provide details (Size, Material, Standard, Quantity)..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <i class="ph ph-nut"></i> GOODWILL FORGE
+                    </div>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.8;">Leading manufacturer and global stockiest of premium Carbon Steel, Stainless Steel, and Alloy Steel Pipe Fittings and Flanges.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#materials">Materials</a></li>
+                        <li><a href="#quality">Quality Assurance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Buttweld Fittings</a></li>
+                        <li><a href="#products">Forged Fittings</a></li>
+                        <li><a href="#products">Industrial Flanges</a></li>
+                        <li><a href="#products">Custom Forgings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Certifications</h4>
+                    <ul class="footer-links" style="display:flex; flex-wrap:wrap; gap:10px;">
+                        <li style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">ISO 9001</li>
+                        <li style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">PED</li>
+                        <li style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem;">IBR</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> GOODWILL FORGE. All Rights Reserved. Designed for Industrial Excellence.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuoteModal()"><i class="ph ph-x"></i></button>
+            <h3 class="card-title" style="margin-bottom: 1rem;">Request a Quote</h3>
+            <p class="card-text" style="margin-bottom: 1.5rem;">Fill out the details below and our sales engineering team will respond within 24 hours.</p>
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="modalProductInput" placeholder="Product/Subject" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Detailed Specifications / Bill of Materials..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Get Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Lightbox Image" id="lightbox-img">
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <a href="https://wa.me/15551234567" target="_blank" class="fab fab-whatsapp" title="Chat on WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+    <a href="#home" class="fab fab-top" id="backToTop" title="Back to Top">
+        <i class="ph ph-caret-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // --- 1. Preloader ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            initCounters(); // Start counters if in view
+        });
+
+        // --- 2. Single Page Application (SPA) Router ---
+        const views = document.querySelectorAll('.view');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function route() {
+            let hash = window.location.hash || '#home';
+            
+            // Hide all views
+            views.forEach(view => view.classList.remove('active'));
+            
+            // Remove active class from nav links
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Find target view
+            const targetView = document.querySelector(`#view-${hash.replace('#', '')}`);
+            if (targetView) {
+                targetView.classList.add('active');
+                // Update nav link
+                const targetLink = document.querySelector(`.nav-links a[href="${hash}"]`);
+                if(targetLink) targetLink.classList.add('active');
+            } else {
+                // 404 Fallback to home
+                document.getElementById('view-home').classList.add('active');
+                document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+            }
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-links').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Re-trigger animations
+            triggerReveals();
+        }
+
+        window.addEventListener('hashchange', route);
+        window.addEventListener('DOMContentLoaded', () => {
+            route();
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+
+        // --- 3. Dark/Light Mode Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check Local Storage
+        const savedTheme = localStorage.getItem('theme');
+        if(savedTheme) html.setAttribute('data-theme', savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Toggle icon
+            themeToggle.innerHTML = newTheme === 'light' ? '<i class="ph ph-moon"></i>' : '<i class="ph ph-sun"></i>';
+        });
+
+        // Set initial icon based on theme
+        if(html.getAttribute('data-theme') === 'dark'){
+            themeToggle.innerHTML = '<i class="ph ph-sun"></i>';
+        }
+
+        // --- 4. Sticky Navbar & Scroll Progress & Back to Top ---
+        const navbar = document.querySelector('.navbar');
+        const progressBar = document.getElementById('scroll-progress');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            // Sticky Nav styling
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = 'var(--shadow-md)';
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.style.boxShadow = 'none';
+                navbar.style.padding = '1rem 0';
+            }
+
+            // Scroll Progress
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+
+            // Back to top button
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // --- 5. Mobile Menu (Hamburger) ---
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // --- 6. Scroll Reveal Animations ---
+        function triggerReveals() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        }
+        window.addEventListener('scroll', triggerReveals); // fallback for scrolling inside long pages
+
+        // --- 7. Animated Counters ---
+        function initCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200; // The lower the slower
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(animate, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Only animate if in view
+                const observer = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        animate();
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(counter);
+            });
+        }
+
+        // --- 8. Product Filtering ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productItems = document.querySelectorAll('.product-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                productItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.classList.add('active'), 50); // Re-trigger fade
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // --- 9. Modal Management ---
+        const modal = document.getElementById('quoteModal');
+        const productInput = document.getElementById('modalProductInput');
+
+        function openQuoteModal(productName = '') {
+            modal.classList.add('active');
+            if(productName) {
+                productInput.value = `Inquiry regarding: ${productName}`;
+            }
+        }
+
+        function closeQuoteModal() {
+            modal.classList.remove('active');
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeQuoteModal();
+            }
+        });
+
+        // --- 10. Form Validation / Submission ---
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // In a real app, this would send an AJAX request.
+            alert('Thank you for your inquiry. Our sales team will contact you shortly.');
+            e.target.reset();
+            closeQuoteModal();
+        }
+
+    </script>
+</body>
+</html>
