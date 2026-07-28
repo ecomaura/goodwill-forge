@@ -212,9 +212,9 @@
             box-shadow: var(--shadow-sm); height: 100%; display: flex; flex-direction: column;
         }
         .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-glow); border-color: var(--accent); }
-        .card-img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--primary); }
+        .card-img { width: 100%; height: 220px; object-fit: contain; padding: 1rem; background-color: var(--bg-color); border-bottom: 1px solid var(--border); }
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--primary); }
         .card-text { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
 
         /* Home Page Previews */
@@ -250,14 +250,15 @@
         .product-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
         .meta-tag { background: transparent; color: var(--accent); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: var(--btn-radius); font-weight: 700; border: 1px solid var(--accent); text-transform: uppercase; }
         
-        .product-section-header { margin: 4rem 0 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border); }
+        .product-section-header { margin: 4rem 0 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border); width: 100%; grid-column: 1 / -1; }
         .product-section-header h2 { color: var(--primary); font-size: 2rem; }
         .product-section-header p { color: var(--text-muted); margin-top: 0.5rem; font-size: 1.1rem; }
         
-        .product-specs { margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-main); }
+        .product-specs { margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-main); line-height: 1.4; }
+        .product-specs p { margin-bottom: 0.5rem; }
         .product-specs ul { list-style: none; padding: 0; }
         .product-specs li { margin-bottom: 0.25rem; display: flex; }
-        .product-specs li strong { width: 90px; color: var(--text-muted); }
+        .product-specs li strong { width: 75px; color: var(--text-muted); flex-shrink: 0; }
 
         /* Materials Section */
         .material-card { border-top: 4px solid var(--accent); border-radius: var(--border-radius); }
@@ -406,7 +407,6 @@
                 <button class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
                     <i class="ph ph-moon"></i>
                 </button>
-                <button class="btn btn-primary" onclick="openQuoteModal()" style="display: none;">Quote</button>
                 <button class="hamburger" id="hamburger">
                     <i class="ph ph-list"></i>
                 </button>
@@ -483,19 +483,19 @@
                     </div>
                     <div class="grid grid-2">
                         <div class="card reveal">
-                            <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="Pipe Flanges" class="card-img">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/16189707723248032267_0" alt="Pipe Flanges" class="card-img" style="object-fit: contain;">
                             <div class="card-body">
                                 <h3 class="card-title">Industrial Flanges</h3>
                                 <p class="card-text">Weld Neck, Slip-On, Blind, and RTJ Flanges manufactured with strict dimensional accuracy. Available in Forged and Plate variations.</p>
-                                <div><a href="#products" class="btn btn-outline">View Flanges</a></div>
+                                <div><a href="#products" class="btn btn-outline" style="width: 100%;">View Flanges</a></div>
                             </div>
                         </div>
                         <div class="card reveal">
-                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Pipe Fittings" class="card-img">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/6156395750161504418_0" alt="Pipe Fittings" class="card-img" style="object-fit: contain;">
                             <div class="card-body">
                                 <h3 class="card-title">Forged Pipe Fittings</h3>
                                 <p class="card-text">High-performance Socket Weld & Threaded fittings (Elbows, Tees, Unions, Caps) forged under high pressure for superior strength.</p>
-                                <div><a href="#products" class="btn btn-outline">View Fittings</a></div>
+                                <div><a href="#products" class="btn btn-outline" style="width: 100%;">View Fittings</a></div>
                             </div>
                         </div>
                     </div>
@@ -624,72 +624,74 @@
                     <button class="filter-btn" data-filter="fittings">Forged Fittings</button>
                 </div>
 
-                <!-- FLANGES SECTION -->
-                <div class="product-section-header reveal product-item" data-category="flanges">
-                    <h2>Industrial Flanges</h2>
-                    <p>Plate and Forged Flanges manufactured for low to extreme high-pressure systems.</p>
-                </div>
-                
-                <div class="grid grid-3">
+                <div class="grid grid-3" id="product-grid">
+                    
+                    <!-- FLANGES SECTION HEADER -->
+                    <div class="product-section-header reveal product-item" data-category="flanges">
+                        <h2>Industrial Flanges</h2>
+                        <p>Manufactured to ASME B16.5, B16.47, EN 1092-1. Available in Carbon, Stainless, and Alloy Steel.</p>
+                    </div>
+
+                    <!-- FLANGES CARDS -->
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80" alt="Weld Neck Flange" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/16189707723248032267_0" alt="Weld Neck Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Weld Neck Flange (WN)</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Forged</span>
-                                <span class="meta-tag">ASME B16.5</span>
+                                <span class="meta-tag">Class 150-2500</span>
                             </div>
                             <div class="product-specs">
+                                <p>Has a long tapered hub that is butt welded to the pipe.</p>
                                 <ul>
-                                    <li><strong>Classes:</strong> 150# to 2500#</li>
                                     <li><strong>Pros:</strong> Highest strength, excellent fatigue resistance.</li>
-                                    <li><strong>Uses:</strong> Refineries, power plants, high temp/pressure.</li>
+                                    <li><strong>Uses:</strong> Refineries, power plants, high pressure.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Weld Neck Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Weld Neck Flange')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="Slip-On Flange" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/3759792245568820285_0" alt="Slip-On Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Slip-On Flange (SO)</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Plate / Forged</span>
-                                <span class="meta-tag">Low Cost</span>
+                                <span class="meta-tag">Cost Effective</span>
                             </div>
                             <div class="product-specs">
+                                <p>Pipe passes through the flange; welded inside and outside.</p>
                                 <ul>
-                                    <li><strong>Design:</strong> Slides over pipe, fillet welded both sides.</li>
-                                    <li><strong>Pros:</strong> Easy installation and alignment.</li>
-                                    <li><strong>Uses:</strong> Water and general low-pressure services.</li>
+                                    <li><strong>Pros:</strong> Easy alignment, economical fabrication.</li>
+                                    <li><strong>Uses:</strong> Water and low-pressure services.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Slip-On Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Slip-On Flange')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=400&q=80" alt="Blind Flange" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/2607664679966231854_0" alt="Blind Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Blind Flange (BL)</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Plate / Forged</span>
-                                <span class="meta-tag">Termination</span>
+                                <span class="meta-tag">Sealing</span>
                             </div>
                             <div class="product-specs">
+                                <p>Solid flange used to seal pipeline ends or pressure vessels.</p>
                                 <ul>
-                                    <li><strong>Design:</strong> Solid flange with no bore.</li>
                                     <li><strong>Pros:</strong> Easy maintenance access.</li>
-                                    <li><strong>Uses:</strong> Sealing pipeline ends, pressure testing.</li>
+                                    <li><strong>Uses:</strong> Pressure testing, future expansion.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Blind Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Blind Flange')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=400&q=80" alt="Socket Weld Flange" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/3308937900237135831_0" alt="Socket Weld Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Socket Weld Flange (SW)</h3>
                             <div class="product-meta">
@@ -697,17 +699,17 @@
                                 <span class="meta-tag">Small Bore</span>
                             </div>
                             <div class="product-specs">
+                                <p>Pipe fits into a socket before fillet welding.</p>
                                 <ul>
-                                    <li><strong>Design:</strong> Pipe fits into socket, fillet welded outside.</li>
-                                    <li><strong>Uses:</strong> Small bore, high-pressure piping.</li>
+                                    <li><strong>Uses:</strong> Small bore, high-pressure piping systems.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Socket Weld Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Socket Weld Flange')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Threaded Flange" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/15922365986941843694_0" alt="Threaded Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Threaded Flange (TH)</h3>
                             <div class="product-meta">
@@ -715,135 +717,168 @@
                                 <span class="meta-tag">No Welding</span>
                             </div>
                             <div class="product-specs">
+                                <p>Internally threaded flange requiring no welding.</p>
                                 <ul>
-                                    <li><strong>Design:</strong> Internally threaded bore.</li>
                                     <li><strong>Uses:</strong> Hazardous areas where welding is undesirable.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Threaded Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Threaded Flange')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="https://images.unsplash.com/photo-1574689049597-7104d4111776?auto=format&fit=crop&w=400&q=80" alt="Specialty Flanges" class="card-img">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/16341186369133374762_0" alt="Spectacle Blind Flange" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title">Specialty Flanges</h3>
+                            <h3 class="card-title">Spectacle Blind / Orifice</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Forged</span>
-                                <span class="meta-tag">Custom</span>
+                                <span class="meta-tag">Isolation/Metering</span>
                             </div>
                             <div class="product-specs">
+                                <p>Specialty flanges for specific process requirements.</p>
                                 <ul>
-                                    <li><strong>Types:</strong> Lap Joint, Orifice, Spectacle Blind.</li>
-                                    <li><strong>Uses:</strong> Metering, maintenance isolation, lined systems.</li>
+                                    <li><strong>Types:</strong> Spectacle Blinds, Orifice Flanges, Lap Joint.</li>
+                                    <li><strong>Uses:</strong> Line isolation, flow measurement.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" onclick="openQuoteModal('Specialty Flange')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Spectacle Blind / Specialty')">Quote</button></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FORGED FITTINGS SECTION -->
-                <div class="product-section-header reveal product-item" data-category="fittings">
-                    <h2>Forged Pipe Fittings</h2>
-                    <p>Manufactured under high pressure/temperature. Available in Socket Weld (SW) and Threaded (NPT/BSP) for small bore piping.</p>
-                </div>
+                    <!-- FORGED FITTINGS SECTION HEADER -->
+                    <div class="product-section-header reveal product-item" data-category="fittings">
+                        <h2>Forged Pipe Fittings</h2>
+                        <p>Manufactured to ASME B16.11 under high pressure. Available in Socket Weld (SW) and Threaded (NPT/BSP) ends for small bore piping (Class 2000 - 9000).</p>
+                    </div>
 
-                <div class="grid grid-4">
+                    <!-- FORGED FITTINGS CARDS -->
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&q=80" alt="90 Degree Elbow" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/6156395750161504418_0" alt="90 Degree Elbow" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">90° Elbow</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
+                            <h3 class="card-title">90° Elbow</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">SW / Threaded</span>
+                            </div>
+                            <div class="product-specs">
                                 <p>Changes pipe direction by 90°.</p>
                                 <ul>
-                                    <li><strong>Ends:</strong> SW / Threaded</li>
-                                    <li><strong>Class:</strong> 2000 - 9000</li>
+                                    <li><strong>Uses:</strong> Steam, Hydraulics, Oil & Gas.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('90 Elbow Forged')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('90 Degree Elbow')">Quote</button></div>
                         </div>
                     </div>
-                    
+
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&q=80" alt="45 Degree Elbow" class="card-img" style="height: 180px; filter: hue-rotate(45deg);">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/14544452844516100699_0" alt="45 Degree Elbow" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">45° Elbow</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Changes flow by 45° minimizing pressure loss.</p>
+                            <h3 class="card-title">45° Elbow</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">SW / Threaded</span>
+                            </div>
+                            <div class="product-specs">
+                                <p>Changes flow direction by 45° while minimizing pressure loss.</p>
                                 <ul>
-                                    <li><strong>Uses:</strong> Process & utility lines</li>
+                                    <li><strong>Uses:</strong> Process & utility lines.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('45 Elbow Forged')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('45 Degree Elbow')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1590846876127-1423b169ceaf?auto=format&fit=crop&w=300&q=80" alt="Tee Fitting" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/12914583664407927959_0" alt="Equal Tee" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Equal & Reducing Tee</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Creates a branch connection in piping systems.</p>
+                            <h3 class="card-title">Tee (Equal/Reducing)</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Branch Connection</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Forged Tee')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Creates a 90° branch connection.</p>
+                                <ul>
+                                    <li><strong>Types:</strong> Equal Tee, Reducing Tee.</li>
+                                </ul>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Forged Tee')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1584285404595-eb73602fcff6?auto=format&fit=crop&w=300&q=80" alt="Cross Fitting" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/15495801037077273872_0" alt="Cross Fitting" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Cross</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Provides four-way pipe connections for instrumentation.</p>
+                            <h3 class="card-title">Cross</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">4-Way Connection</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Forged Cross')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Provides four-way pipe connections.</p>
+                                <ul>
+                                    <li><strong>Uses:</strong> Instrumentation and utility piping.</li>
+                                </ul>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Forged Cross')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=300&q=80" alt="Coupling" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/1854287012843475861_0" alt="Coupling" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Coupling</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Joins two pipes. Available in Full, Half, and Reducing types.</p>
+                            <h3 class="card-title">Coupling</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Full / Half / Reducing</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Coupling')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Joins two pipes together in a straight line.</p>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Forged Coupling')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=300&q=80" alt="Union" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/11762687819634993157_0" alt="Union" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Union</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Allows easy pipe disassembly without cutting. Highly reusable.</p>
+                            <h3 class="card-title">Union</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Disconnectable</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Union')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Allows pipe disassembly without cutting.</p>
+                                <ul>
+                                    <li><strong>Pros:</strong> Easy maintenance, reusable.</li>
+                                </ul>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Forged Union')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1574689049597-7104d4111776?auto=format&fit=crop&w=300&q=80" alt="Cap & Plug" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/13559349350210695258_0" alt="Pipe Cap & Plug" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Pipe Cap & Plug</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Closes the end of a pipe (Cap) or female threaded openings (Plug).</p>
+                            <h3 class="card-title">Pipe Cap & Plug</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Termination</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Cap or Plug')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Closes the end of a pipe. Caps for pipe ends, Plugs for female threaded openings.</p>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Cap or Plug')">Quote</button></div>
                         </div>
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=300&q=80" alt="Bushing & Boss" class="card-img" style="height: 180px;">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/10773853950209155919_0" alt="Bushing & Boss" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title" style="font-size: 1.1rem;">Bushing & Boss</h3>
-                            <div class="product-specs" style="flex-grow: 1;">
-                                <p>Bushing reduces threaded size. Boss provides a threaded outlet on tanks.</p>
+                            <h3 class="card-title">Bushing & Boss</h3>
+                            <div class="product-meta">
+                                <span class="meta-tag">Adaptors</span>
                             </div>
-                            <div><button class="btn btn-outline" style="width: 100%; padding: 0.5rem;" onclick="openQuoteModal('Bushing or Boss')">Quote</button></div>
+                            <div class="product-specs">
+                                <p>Bushing reduces one threaded pipe size to another. Boss provides a threaded outlet on tanks.</p>
+                            </div>
+                            <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Bushing or Boss')">Quote</button></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -1137,9 +1172,9 @@
                 <div>
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="#products">Buttweld Fittings</a></li>
                         <li><a href="#products">Forged Fittings</a></li>
                         <li><a href="#products">Industrial Flanges</a></li>
+                        <li><a href="#products">Specialty Flanges</a></li>
                         <li><a href="#products">Custom Forgings</a></li>
                     </ul>
                 </div>
@@ -1414,4 +1449,5 @@
     </script>
 </body>
 </html>
+
 ```eof
