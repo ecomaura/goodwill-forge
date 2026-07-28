@@ -212,9 +212,10 @@
             box-shadow: var(--shadow-sm); height: 100%; display: flex; flex-direction: column;
         }
         .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-glow); border-color: var(--accent); }
-        .card-img { width: 100%; height: 220px; object-fit: contain; padding: 1rem; background-color: var(--bg-color); border-bottom: 1px solid var(--border); }
+        .card-img { width: 100%; height: 220px; object-fit: cover; }
+        .card-img.contain { object-fit: contain; padding: 1.5rem; background-color: var(--bg-color); border-bottom: 1px solid var(--border); }
         .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--primary); }
+        .card-title { font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--primary); }
         .card-text { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
 
         /* Home Page Previews */
@@ -483,7 +484,7 @@
                     </div>
                     <div class="grid grid-2">
                         <div class="card reveal">
-                            <img src="http://googleusercontent.com/image_collection/image_retrieval/16189707723248032267_0" alt="Pipe Flanges" class="card-img" style="object-fit: contain;">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Pipe Flanges" class="card-img">
                             <div class="card-body">
                                 <h3 class="card-title">Industrial Flanges</h3>
                                 <p class="card-text">Weld Neck, Slip-On, Blind, and RTJ Flanges manufactured with strict dimensional accuracy. Available in Forged and Plate variations.</p>
@@ -491,7 +492,7 @@
                             </div>
                         </div>
                         <div class="card reveal">
-                            <img src="http://googleusercontent.com/image_collection/image_retrieval/6156395750161504418_0" alt="Pipe Fittings" class="card-img" style="object-fit: contain;">
+                            <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=800&q=80" alt="Pipe Fittings" class="card-img">
                             <div class="card-body">
                                 <h3 class="card-title">Forged Pipe Fittings</h3>
                                 <p class="card-text">High-performance Socket Weld & Threaded fittings (Elbows, Tees, Unions, Caps) forged under high pressure for superior strength.</p>
@@ -634,7 +635,7 @@
 
                     <!-- FLANGES CARDS -->
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/16189707723248032267_0" alt="Weld Neck Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Weld Neck Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Weld Neck Flange (WN)</h3>
                             <div class="product-meta">
@@ -653,7 +654,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/3759792245568820285_0" alt="Slip-On Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Slip-On Flange" class="card-img" style="filter: grayscale(100%);">
                         <div class="card-body">
                             <h3 class="card-title">Slip-On Flange (SO)</h3>
                             <div class="product-meta">
@@ -672,7 +673,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/2607664679966231854_0" alt="Blind Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80" alt="Blind Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Blind Flange (BL)</h3>
                             <div class="product-meta">
@@ -691,7 +692,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/3308937900237135831_0" alt="Socket Weld Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80" alt="Socket Weld Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Socket Weld Flange (SW)</h3>
                             <div class="product-meta">
@@ -709,7 +710,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/15922365986941843694_0" alt="Threaded Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1584285404595-eb73602fcff6?auto=format&fit=crop&w=600&q=80" alt="Threaded Flange" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Threaded Flange (TH)</h3>
                             <div class="product-meta">
@@ -727,21 +728,21 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="flanges">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/16341186369133374762_0" alt="Spectacle Blind Flange" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1574689049597-7104d4111776?auto=format&fit=crop&w=600&q=80" alt="Specialty Flanges" class="card-img">
                         <div class="card-body">
-                            <h3 class="card-title">Spectacle Blind / Orifice</h3>
+                            <h3 class="card-title">Specialty Flanges</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Forged</span>
-                                <span class="meta-tag">Isolation/Metering</span>
+                                <span class="meta-tag">Custom</span>
                             </div>
                             <div class="product-specs">
                                 <p>Specialty flanges for specific process requirements.</p>
                                 <ul>
-                                    <li><strong>Types:</strong> Spectacle Blinds, Orifice Flanges, Lap Joint.</li>
+                                    <li><strong>Types:</strong> Spectacle Blinds, Orifice, Lap Joint.</li>
                                     <li><strong>Uses:</strong> Line isolation, flow measurement.</li>
                                 </ul>
                             </div>
-                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Spectacle Blind / Specialty')">Quote</button></div>
+                            <div><button class="btn btn-outline" style="width:100%;" onclick="openQuoteModal('Specialty Flange')">Quote</button></div>
                         </div>
                     </div>
 
@@ -753,7 +754,7 @@
 
                     <!-- FORGED FITTINGS CARDS -->
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/6156395750161504418_0" alt="90 Degree Elbow" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="90 Degree Elbow" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">90° Elbow</h3>
                             <div class="product-meta">
@@ -770,7 +771,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/14544452844516100699_0" alt="45 Degree Elbow" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1590846876127-1423b169ceaf?auto=format&fit=crop&w=600&q=80" alt="45 Degree Elbow" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">45° Elbow</h3>
                             <div class="product-meta">
@@ -787,7 +788,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/12914583664407927959_0" alt="Equal Tee" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Equal Tee" class="card-img" style="filter: sepia(30%);">
                         <div class="card-body">
                             <h3 class="card-title">Tee (Equal/Reducing)</h3>
                             <div class="product-meta">
@@ -804,7 +805,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/15495801037077273872_0" alt="Cross Fitting" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80" alt="Cross Fitting" class="card-img" style="filter: brightness(0.8);">
                         <div class="card-body">
                             <h3 class="card-title">Cross</h3>
                             <div class="product-meta">
@@ -821,7 +822,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/1854287012843475861_0" alt="Coupling" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1584285404595-eb73602fcff6?auto=format&fit=crop&w=600&q=80" alt="Coupling" class="card-img" style="filter: contrast(1.2);">
                         <div class="card-body">
                             <h3 class="card-title">Coupling</h3>
                             <div class="product-meta">
@@ -835,7 +836,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/11762687819634993157_0" alt="Union" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Union" class="card-img">
                         <div class="card-body">
                             <h3 class="card-title">Union</h3>
                             <div class="product-meta">
@@ -852,7 +853,7 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/13559349350210695258_0" alt="Pipe Cap & Plug" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1574689049597-7104d4111776?auto=format&fit=crop&w=600&q=80" alt="Pipe Cap & Plug" class="card-img" style="filter: saturate(1.5);">
                         <div class="card-body">
                             <h3 class="card-title">Pipe Cap & Plug</h3>
                             <div class="product-meta">
@@ -866,14 +867,14 @@
                     </div>
 
                     <div class="card reveal product-item" data-category="fittings">
-                        <img src="http://googleusercontent.com/image_collection/image_retrieval/10773853950209155919_0" alt="Bushing & Boss" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1611270418597-a6cbf2204859?auto=format&fit=crop&w=600&q=80" alt="Bushing & Boss" class="card-img" style="filter: hue-rotate(180deg);">
                         <div class="card-body">
                             <h3 class="card-title">Bushing & Boss</h3>
                             <div class="product-meta">
                                 <span class="meta-tag">Adaptors</span>
                             </div>
                             <div class="product-specs">
-                                <p>Bushing reduces one threaded pipe size to another. Boss provides a threaded outlet on tanks.</p>
+                                <p>Bushing reduces threaded size. Boss provides a threaded outlet on tanks.</p>
                             </div>
                             <div><button class="btn btn-outline" style="width: 100%;" onclick="openQuoteModal('Bushing or Boss')">Quote</button></div>
                         </div>
@@ -1449,5 +1450,4 @@
     </script>
 </body>
 </html>
-
 ```eof
