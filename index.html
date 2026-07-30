@@ -307,6 +307,7 @@
         .timeline-content { padding: 2rem; background: var(--surface); border-radius: var(--border-radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: var(--transition); }
         .timeline-content:hover { border-color: var(--accent); box-shadow: var(--shadow-glow); transform: translateY(-3px); }
         .timeline-content h4 { color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .timeline-dot { display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: white; }
 
         /* Gallery / Lightbox */
         #lightbox { position: fixed; inset: 0; background: rgba(15,23,42,0.95); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
@@ -1111,62 +1112,194 @@
 </section>
 
         <!-- ================= QUALITY VIEW ================= -->
-        <section id="view-quality" class="view">
-            <div class="section container">
-                <div class="text-center reveal">
-                    <h1 class="section-title">Quality Assurance & Testing</h1>
-                    <p class="section-subtitle">Zero defect tolerance. Every component undergoes rigorous inspection to ensure absolute reliability.</p>
-                </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>1. Raw Material Inspection</h4>
-                            <p class="card-text">PMI (Positive Material Identification) and chemical analysis of all incoming billets and plates.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>2. In-Process Checks</h4>
-                            <p class="card-text">Stringent dimensional inspection during forging and CNC machining stages to guarantee precise tolerances.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>3. Non-Destructive Testing (NDT)</h4>
-                            <p class="card-text">Ultrasonic Testing (UT), Magnetic Particle Inspection (MPI), and Radiography to detect internal flaws.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>4. Destructive Testing</h4>
-                            <p class="card-text">Tensile strength, impact testing, and hardness testing conducted on sample batches.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>5. Final Certification</h4>
-                            <p class="card-text">Issue of EN10204 3.1 Mill Test Certificates and distinct marking for 100% material traceability.</p>
-                        </div>
-                    </div>
-                </div>
+<section id="view-quality" class="view">
+    <div class="section container">
+        <div class="text-center reveal">
+            <h1 class="section-title">Quality Assurance & Testing</h1>
+            <p class="section-subtitle">Zero defect tolerance. Every component undergoes rigorous inspection to ensure absolute reliability.</p>
+        </div>
 
-                <div class="text-center reveal" style="margin-top: 6rem;">
-                    <h2 class="section-title">Global Certifications</h2>
-                    <div class="grid grid-4" style="margin-top: 3rem;">
-                        <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">ISO 9001:2015</h3></div></div>
-                        <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">PED 2014/68/EU</h3></div></div>
-                        <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">IBR Approved</h3></div></div>
-                        <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">NACE MR0175</h3></div></div>
-                    </div>
+        <!-- Manufacturing Process Tabs -->
+        <div class="text-center reveal" style="margin: 4rem 0 1rem;">
+            <h2 class="section-title" style="font-size: 2rem;">Manufacturing Process</h2>
+        </div>
+        <div class="filter-group reveal">
+            <button class="filter-btn process-tab active" data-process="buttweld">Buttweld Fitting Process</button>
+            <button class="filter-btn process-tab" data-process="flange">Forged Flange Process</button>
+            <button class="filter-btn process-tab" data-process="forged">Forged Fitting Process</button>
+        </div>
+
+        <!-- Buttweld Fitting Process -->
+        <div class="timeline process-panel" data-process-panel="buttweld">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-stack"></i></div>
+                <div class="timeline-content">
+                    <h4>1. Material Preparing</h4>
+                    <p class="card-text">High-quality seamless / ERW pipes and plates are selected and verified for chemical composition and mechanical properties.</p>
                 </div>
             </div>
-        </section>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-scissors"></i></div>
+                <div class="timeline-content">
+                    <h4>2. Material Cutting</h4>
+                    <p class="card-text">Pipes are cut into required lengths and blanks are prepared as per fitting size and dimensions.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-fire"></i></div>
+                <div class="timeline-content">
+                    <h4>3. Hot Forming</h4>
+                    <p class="card-text">The cut pieces are heated and hot formed (pressing / reduced) in formers to create the basic shape of the fitting.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-thermometer-hot"></i></div>
+                <div class="timeline-content">
+                    <h4>4. Heat Treatment</h4>
+                    <p class="card-text">Fittings are heat treated to normalize the structure, relieve internal stresses and improve mechanical properties.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-ruler"></i></div>
+                <div class="timeline-content">
+                    <h4>5. Beveling / End Preparation</h4>
+                    <p class="card-text">Ends are beveled and prepared as per ASME B16.25 to ensure proper joint fit-up during welding.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-magnifying-glass"></i></div>
+                <div class="timeline-content">
+                    <h4>6. NDE (Non-Destructive Testing)</h4>
+                    <p class="card-text">Each fitting undergoes NDT such as UT, MT, PT, or RT as per applicable standards to ensure soundness.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-check-circle"></i></div>
+                <div class="timeline-content">
+                    <h4>7. Final Inspection & Marking</h4>
+                    <p class="card-text">Fittings are inspected for dimensions, surface finish and markings. Approved fittings are cleaned, marked and packed for dispatch.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forged Flange Process -->
+        <div class="timeline process-panel" data-process-panel="flange" style="display:none;">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-stack"></i></div>
+                <div class="timeline-content">
+                    <h4>1. Material Preparing</h4>
+                    <p class="card-text">High-quality raw materials are selected and prepared to ensure structural integrity and performance in the final product.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-scissors"></i></div>
+                <div class="timeline-content">
+                    <h4>2. Material Cutting</h4>
+                    <p class="card-text">Raw materials are cut into required lengths with precision using advanced cutting equipment.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-fire"></i></div>
+                <div class="timeline-content">
+                    <h4>3. Heating</h4>
+                    <p class="card-text">The cut pieces are heated to optimum forging temperature to improve ductility and ensure proper metal flow.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-hammer"></i></div>
+                <div class="timeline-content">
+                    <h4>4. Forging</h4>
+                    <p class="card-text">Heated material is shaped under high pressure to form the desired flange structure with superior strength and durability.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-thermometer-hot"></i></div>
+                <div class="timeline-content">
+                    <h4>5. Heat Treatment</h4>
+                    <p class="card-text">Forged flanges are heat treated to enhance mechanical properties, relieve internal stresses, and improve toughness.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-gear"></i></div>
+                <div class="timeline-content">
+                    <h4>6. Cutting & Shearing</h4>
+                    <p class="card-text">Excess material is removed and flange faces are machined to achieve accurate dimensions and smooth surface finish.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-magnifying-glass"></i></div>
+                <div class="timeline-content">
+                    <h4>7. Inspection</h4>
+                    <p class="card-text">Each flange is thoroughly inspected for dimensional accuracy, surface finish, and quality to ensure compliance with international standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forged Fitting Process -->
+        <div class="timeline process-panel" data-process-panel="forged" style="display:none;">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-stack"></i></div>
+                <div class="timeline-content">
+                    <h4>1. Material Preparing</h4>
+                    <p class="card-text">High-quality forged round bars are selected and inspected for chemical composition and mechanical properties.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-scissors"></i></div>
+                <div class="timeline-content">
+                    <h4>2. Material Cutting</h4>
+                    <p class="card-text">Bars are cut into required lengths (blanks) as per fitting size and weight criteria.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-fire"></i></div>
+                <div class="timeline-content">
+                    <h4>3. Heating</h4>
+                    <p class="card-text">The blanks are heated in a furnace to the optimum forging temperature to ensure good metal flow and ductility.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-hammer"></i></div>
+                <div class="timeline-content">
+                    <h4>4. Forging</h4>
+                    <p class="card-text">Heated blanks are forged under high pressure in presses to form the desired fitting shape and grain structure.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-thermometer-hot"></i></div>
+                <div class="timeline-content">
+                    <h4>5. Heat Treatment</h4>
+                    <p class="card-text">Forged fittings are heat treated to optimize mechanical properties, relieve stresses and improve toughness.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-gear"></i></div>
+                <div class="timeline-content">
+                    <h4>6. Machining</h4>
+                    <p class="card-text">Excess flash is removed and fitting faces / threads are machined to achieve accurate dimensions and smooth surface finish.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="ph-fill ph-check-circle"></i></div>
+                <div class="timeline-content">
+                    <h4>7. Final Inspection & Testing</h4>
+                    <p class="card-text">Each fitting is inspected for dimensions, threads, surface finish and tested as per standards before packing and dispatch.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Certifications -->
+        <div class="text-center reveal" style="margin-top: 6rem;">
+            <h2 class="section-title">Global Certifications</h2>
+            <div class="grid grid-4" style="margin-top: 3rem;">
+                <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">ISO 9001:2015</h3></div></div>
+                <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">PED 2014/68/EU</h3></div></div>
+                <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">IBR Approved</h3></div></div>
+                <div class="card"><div class="card-body text-center" style="justify-content: center;"><h3 class="text-primary" style="font-size: 1.5rem;">NACE MR0175</h3></div></div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- ================= CONTACT VIEW ================= -->
         <section id="view-contact" class="view">
@@ -1540,6 +1673,23 @@
                 });
             });
         });
+
+        // --- Manufacturing Process Tabs ---
+const processTabs = document.querySelectorAll('.process-tab');
+const processPanels = document.querySelectorAll('.process-panel');
+
+processTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        processTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.getAttribute('data-process');
+        processPanels.forEach(panel => {
+            panel.style.display = panel.getAttribute('data-process-panel') === target ? 'block' : 'none';
+        });
+        setTimeout(triggerReveals, 50);
+    });
+});
 
         // --- 9. Modal Management ---
         const modal = document.getElementById('quoteModal');
