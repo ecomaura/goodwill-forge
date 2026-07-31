@@ -426,6 +426,7 @@
                 <li><a href="#industries" class="nav-item">Industries</a></li>
                 <li><a href="#quality" class="nav-item">Quality</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
+                <li><a href="#gallery" class="nav-item">Gallery</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
@@ -1072,6 +1073,66 @@
     </div>
 </section>
 
+        <!-- ================= GALLERY VIEW ================= -->
+<section id="view-gallery" class="view">
+    <div class="section container">
+        <div class="text-center reveal">
+            <h1 class="section-title">Gallery</h1>
+            <p class="section-subtitle">A closer look at our manufacturing floor, products, and processes in action.</p>
+        </div>
+
+        <div class="filter-group reveal">
+            <button class="filter-btn gallery-tab active" data-gallery="images">Images</button>
+            <button class="filter-btn gallery-tab" data-gallery="videos">Videos</button>
+        </div>
+
+        <!-- Images Tab -->
+        <div class="gallery-panel" data-gallery-panel="images">
+            <div class="grid grid-3">
+                <p class="card-text text-center" style="grid-column: 1 / -1;">Image gallery coming soon.</p>
+            </div>
+        </div>
+
+        <!-- Videos Tab -->
+        <div class="gallery-panel" data-gallery-panel="videos" style="display:none;">
+            <div class="grid grid-3">
+
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260727-WA0051.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260727-WA0052.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0034.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0035.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0036.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0037.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0038.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0039.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0040.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+                <div class="card reveal">
+                    <video src="https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/VID-20260731-WA0041.mp4" muted autoplay loop playsinline controls style="width:100%; height:220px; object-fit:cover; background:#000;"></video>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- ================= QUALITY VIEW ================= -->
 <section id="view-quality" class="view">
     <div class="section container">
@@ -1089,6 +1150,7 @@
             <button class="filter-btn process-tab" data-process="flange">Forged Flange Process</button>
             <button class="filter-btn process-tab" data-process="forged">Forged Fitting Process</button>
         </div>
+        
 
         <!-- Buttweld Fitting Process -->
 <div class="process-panel" data-process-panel="buttweld">
@@ -1522,6 +1584,23 @@ processTabs.forEach(tab => {
         const target = tab.getAttribute('data-process');
         processPanels.forEach(panel => {
             panel.style.display = panel.getAttribute('data-process-panel') === target ? 'block' : 'none';
+        });
+        setTimeout(triggerReveals, 50);
+    });
+});
+
+        // --- Gallery Tabs (Images/Videos) ---
+const galleryTabs = document.querySelectorAll('.gallery-tab');
+const galleryPanels = document.querySelectorAll('.gallery-panel');
+
+galleryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        galleryTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.getAttribute('data-gallery');
+        galleryPanels.forEach(panel => {
+            panel.style.display = panel.getAttribute('data-gallery-panel') === target ? 'block' : 'none';
         });
         setTimeout(triggerReveals, 50);
     });
