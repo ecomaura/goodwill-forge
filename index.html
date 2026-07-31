@@ -1454,6 +1454,21 @@
             initCounters(); // Start counters if in view
         });
 
+        // --- Gallery Lightbox Helper ---
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+}
+
+document.querySelector('.lightbox-close').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('active');
+});
+document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('active');
+    }
+});
+
         // --- 2. Single Page Application (SPA) Router ---
         const views = document.querySelectorAll('.view');
         const navLinks = document.querySelectorAll('.nav-links a');
