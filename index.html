@@ -205,12 +205,12 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Hero Section */
-        .hero {
-            height: 100vh; display: flex; align-items: center; position: relative;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95)),
-                        url('https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/IMG-20260730-WA0033.jpg') center/cover;
-            color: white; margin-top: -80px; padding-top: 80px;
-        }
+       .hero {
+    height: 100vh; display: flex; align-items: center; position: relative;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95)),
+                url('https://raw.githubusercontent.com/ecomaura/goodwill-forge/refs/heads/main/images/IMG-20260730-WA0033.jpg') center/contain no-repeat, var(--primary);
+    color: white; margin-top: -80px; padding-top: 80px;
+}
         .hero::after {
             content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 150px;
             background: linear-gradient(to bottom, transparent, var(--bg-color)); pointer-events: none;
